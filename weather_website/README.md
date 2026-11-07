@@ -1,16 +1,109 @@
-# React + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive weather application built with React and Vite. It allows users to search for cities and check current weather conditions, hourly forecasts, and a 7-day forecast.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search for cities around the world.
+- Display current weather conditions.
+- View temperature, humidity, wind speed, and precipitation.
+- Check wind direction.
+- View the next 8 hours of weather.
+- View a 7-day weather forecast.
+- Display sunrise and sunset times.
+- Switch between Celsius and Fahrenheit.
+- Add and remove favorite cities.
+- Save favorite cities using Local Storage.
+- Responsive design for different screen sizes.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** – Building the user interface.
+- **Vite** – Development environment and build tool.
+- **JavaScript** – Application logic.
+- **CSS** – Styling and responsive layout.
+- **Axios** – Making HTTP requests.
+- **Font Awesome** – Icons.
+- **Open-Meteo API** – Weather and geocoding data.
 
-## Expanding the ESLint configuration
+## APIs
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project uses two Open-Meteo APIs:
+
+- [Geocoding API](https://open-meteo.com/en/docs/geocoding-api) – Searches for cities and retrieves their coordinates.
+- [Weather Forecast API](https://open-meteo.com/en/docs) – Retrieves current weather and forecast information.
+
+No API key is required.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/BCHAYMAE/weather-app.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd weather_website
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## Project Structure
+
+```text
+weather_website/
+├── public/
+├── src/
+│   ├── component/
+│   │   ├── Header.jsx
+│   │   └── Sidebar.jsx
+│   ├── pages/
+│   │   └── Home.jsx
+│   ├── services/
+│   │   └── Weather.jsx
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── layout.css
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── README.md
+```
+
+## Running the Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## Data Source
+
+Weather information is provided by [Open-Meteo](https://open-meteo.com/).
+
+---
+
+**Developed with React and Open-Meteo.**

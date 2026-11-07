@@ -2,13 +2,12 @@
 import { useState } from "react";
 import { searchCity } from "../services/Weather";
 
-function Header({ onCitySelect }) {
+function Header({ onCitySelect, temperatureUnit, onUnitChange }) {
   const [city, setCity] = useState("");
   const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Search for a city when the form is submitted
   const handleSearch = async (e) => {
     e.preventDefault();
 
@@ -34,7 +33,6 @@ function Header({ onCitySelect }) {
     }
   };
 
-  // Select a city from the results
   const handleSelectCity = (selectedCity) => {
     onCitySelect(selectedCity);
     setCity("");
@@ -76,8 +74,9 @@ function Header({ onCitySelect }) {
       </div>
 
       <div className="header-actions">
-        <button>°C</button>
-        <button>Settings</button>
+        <button onClick={onUnitChange}>
+          {temperatureUnit}
+        </button>
       </div>
     </header>
   );
